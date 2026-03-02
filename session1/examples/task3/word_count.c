@@ -2,6 +2,20 @@
 #include <stdio.h>
 
 int main(int argc, char **argv) {
+
+  FILE *file = fopen("poem.txt", "r");
+
+  //check if file exists
+  if (file == NULL) {
+    printf("Error: File not found.\n");
+    return 1;
+  }
+  //initialize variables
+  char buffer[100];
+  int lineCount = 0;
+  int charCount = 0;
+  int wordCount = 0;
+
   /*
   Create a program which opens a file specified on the command line and counts:
   - number of lines
