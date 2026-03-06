@@ -38,6 +38,9 @@ int main(void) {
 void move_point(int *x, int *y, int dx, int dy) {
   // update the coordinates by the given delta
   // i.e. (x+dx, y+dy)
+  *x += dx; // 把dx加到x上
+  *y += dy; // 把dy加到y上
+
 }
 
 /**
@@ -51,6 +54,11 @@ void reflect_point(int *x, int *y, char axis) {
   // reflect the point across the given axis
   // e.g. reflect (7,3) across the X axis -> (7,-3)
   // across the y axis -> (-7, 3)
+  if (axis == 'x') {
+    *y = -*y; // 把y坐标取反
+  } else if (axis == 'y') {
+    *x = -*x; // 把x坐标取反
+  }
 }
 
 /**
@@ -61,6 +69,12 @@ void reflect_point(int *x, int *y, char axis) {
  */
 void swap_coords(int *x, int *y) {
   // swap the x and y values of a coordinate
+  // e.g. (7,3
+  // ) -> (3,7)
+  int temp = *x; // 把x的值存到temp里
+  *x = *y; // 把y的值赋给x
+  *y = temp; // 把temp的值赋给y,这样可以在改变x之前保存它的值,以便之后赋给y
+
 }
 
 /**

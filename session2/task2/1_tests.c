@@ -4,10 +4,15 @@
 
 int is_palindrome(const char *str);
 
-int main(void) {
+//int main(void) {
   // Use 'assert' to write some tests - does the function work?
   // consider what is and is not a palindrome!
-  return 0;
+  
+void test_is_palindrome() {
+  TEST_CHECK(is_palindrome("") == 1); // empty string is a palindrome
+  TEST_CHECK(is_palindrome("racecar") == 1); // racecar is a palindrome
+  TEST_CHECK(is_palindrome("hello") == 0); // hello is not a palindrome
+  TEST_CHECK(is_palindrome("world") == 0); // world is not a palindrome
 }
 
 /**

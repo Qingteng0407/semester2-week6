@@ -24,8 +24,6 @@ Consider testing:
 ## Example
 
 ```c
-assert(is_palindrome("racecar") == 1);  // Should pass
-assert(is_palindrome("hello") == 0);    // Should pass
 ```
 
 ## Running
