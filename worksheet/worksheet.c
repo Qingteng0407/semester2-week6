@@ -1,6 +1,6 @@
 /**
  * Week 6 Worksheet - Functions Practice
- *
+ *Name:Qingteng Zhang  Student ID:201821913    
  * This worksheet tests your understanding of:
  * - Pass by value (returning results)
  * - Pass by reference (modifying via pointers)
@@ -140,7 +140,8 @@ void reverse_array(int *arr, int n) {
 double average(int *arr, int n) {
   // TODO: Implement this function
   // Hint: Be careful with integer division!
-  return 0.0; // Replace this
+  double sum = sum_array(arr, n);
+  return sum / n; // Replace this
 }
 
 /**
@@ -163,8 +164,14 @@ double average(int *arr, int n) {
  */
 int find_max(int *arr, int n, int *index) {
   // TODO: Implement this function
-  *index = 0;
-  return 0; // Replace this
+  int max;
+  for (int i = 0; i < n; i++){
+    if (i == 0 || arr[i] > max){
+      max = arr[i];
+      *index = i;
+    }
+  }
+  return max; // Replace this
 }
 
 /* ============================================================
